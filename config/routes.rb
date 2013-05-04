@@ -1,4 +1,4 @@
 ProjectMan::Application.routes.draw do
-  resources :projects, except: :index
+  resources :projects
   root to: "projects#index"
 end

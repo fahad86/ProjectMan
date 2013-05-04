@@ -23,7 +23,7 @@ end
 
 gem 'jquery-rails'
 
-gem "angular-rails"
+gem "angularjs-rails"
 gem "bootstrap-sass"
 
 # To use ActiveModel has_secure_password

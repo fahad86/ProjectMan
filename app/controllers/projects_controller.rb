@@ -1,14 +1,15 @@
 class ProjectsController < ApplicationController
   def index
+    if request.xhr?
+      render json: Project.all
+    end
   end
 
   def create
-    Project.create!(params[:project])
-    redirect_to :back
+    render json: Project.create!(params[:project])
   end
 
   def destroy
-    Project.find(params[:id]).destroy
-    redirect_to :back
+    render json: Project.find(params[:id]).destroy
   end
 end
