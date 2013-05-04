@@ -1,0 +1,16 @@
+<%= form_for Project.new do |f| %>
+
+  <%= f.text_field :name, placeholder: "new project name" %>
+
+<% end %>
+
+<ul>
+  <% Project.all.each do |project| %>
+
+    <li>
+      <%= project.name %>
+      <%= link_to "Delete", project, method: :delete %>
+    </li>
+
+  <% end %>
+</ul>
