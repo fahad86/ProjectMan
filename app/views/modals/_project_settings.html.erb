@@ -1,0 +1,28 @@
+<div class="modal hide fade" id="project-settings">
+  <form ng-controller="ProjectSettingsCtrl" ng-submit="updateProjectSettings()" ng-model="projectSettings.project" class="form-horizontal">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>{{projectSettings.project.name}} Settings</h3>
+    </div>
+
+    <div class="modal-body">
+      <div class="control-group">
+        <%= label_tag :name, "Name", class: "control-label" %>
+        <div class="controls">
+          <%= text_field_tag :name, nil, required: true, placeholder: "name", "ng-model" => "projectSettings.project.name" %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= label_tag :git_path, "Git Repository", class: "control-label" %>
+        <div class="controls">
+          <%= text_field_tag :git_path, nil, placeholder: "path or url", "ng-model" => "projectSettings.project.git_path" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <%= submit_tag "Update Project", class: "btn btn-primary" %>
+    </div>
+  </form>
+</div>

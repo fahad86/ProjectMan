@@ -9,7 +9,18 @@ class ProjectsController < ApplicationController
     render json: Project.create!(params[:project])
   end
 
+  def update
+    project.update_attributes!(params[:project])
+    render json: project
+  end
+
   def destroy
-    render json: Project.find(params[:id]).destroy
+    render json: project.destroy
+  end
+
+  private
+
+  def project
+    @project ||= Project.find(params[:id])
   end
 end

@@ -10,3 +10,8 @@
   $scope.deleteProject = (project)-> 
     project.$delete ->
       $scope.projects = Project.query()
+
+  $scope.openSettings = (project)->
+    $scope.projectSettings =
+      project: project
+    $("#project-settings").modal("show")
