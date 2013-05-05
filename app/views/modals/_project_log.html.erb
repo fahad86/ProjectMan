@@ -1,4 +1,4 @@
-<div class="modal hide fade" id="project-log">
+<div class="modal hide fade log" id="project-log">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
     <h3>{{projectLog.project.name}} Git Log</h3>
@@ -6,10 +6,12 @@
 
   <div class="modal-body">
     <ol>
-      <li ng-repeat="entry in projectLog.project.repo.log">
+      <li ng-repeat="entry in projectLog.project.repo.log" class="well">
         <div class="commit-id" ng-bind="entry.id"></div>
-        <div class="commit-name" ng-bind="entry.author.name"></div>
-        <div class="commit-email" ng-bind="entry.author.email"></div>
+        <div class="author">
+          <span class="commit-name" ng-bind="entry.author.name"></span>
+          &lt;<span class="commit-email" ng-bind="entry.author.email"></span>&gt;
+        </div>
         <div class="commit-date" ng-bind="entry.authored_date"></div>
         <div class="commit-message" ng-bind="entry.message"></div>
       </li>
