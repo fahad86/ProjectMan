@@ -3,9 +3,11 @@
     <%= text_field_tag :name, nil, required: true, placeholder: "new project name", "ng-model" => "newProject.name" %>
   </form>
   
-  <ul>
-    <li ng-repeat="project in projects">
+  <ul class="projects">
+    <li class="project" ng-repeat="project in projects">
       <div class="name" ng-bind="project.name"></div>
+      <div class="git-url" ng-bind="project.git_path"></div>
+      <%= link_to "Set Git Repository", "", "ng-click" => "setGitPath(project)" %>
       <%= link_to "Delete", "", "ng-click" => "deleteProject(project)" %>
     </li>
   </ul>
