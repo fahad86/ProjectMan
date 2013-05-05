@@ -1,14 +1,12 @@
 <div ng-controller="ProjectsCtrl">
-<form ng-controller="NewProjectFormCtrl" ng-submit="submitNewProject()" ng-model="newProject">
-
-  <%= text_field_tag :name, nil, required: true, placeholder: "new project name", "ng-model" => "newProject.name" %>
-
-</form>
-
-<ul>
-  <li ng-repeat="project in projects">
-    <div class="name" ng-bind="project.name"></div>
-    <%= link_to "Delete", "", "ng-click" => "deleteProject(project)" %>
-  </li>
-</ul>
+  <form ng-controller="NewProjectFormCtrl" ng-submit="submitNewProject()" ng-model="newProject">
+    <%= text_field_tag :name, nil, required: true, placeholder: "new project name", "ng-model" => "newProject.name" %>
+  </form>
+  
+  <ul>
+    <li ng-repeat="project in projects">
+      <div class="name" ng-bind="project.name"></div>
+      <%= link_to "Delete", "", "ng-click" => "deleteProject(project)" %>
+    </li>
+  </ul>
 </div>
