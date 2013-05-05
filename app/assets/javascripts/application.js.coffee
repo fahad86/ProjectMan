@@ -9,12 +9,13 @@
 @app.config(["$httpProvider", (provider)->
   provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')])
 @app.factory "Project", ["$resource", ($resource)->
-  $resource "/projects/:id",
+  $resource "/projects/:id/:action",
   {
     id: "@id"
   },
   {
     update: { method:'PUT' }
     delete: { method:'DELETE' }
+    gitLog: { method:'GET', params: { action: "gitlog" } }
   }
 ]

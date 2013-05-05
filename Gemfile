@@ -25,6 +25,7 @@ gem 'jquery-rails'
 
 gem "angularjs-rails"
 gem "bootstrap-sass"
+gem "grit", "2.4.1"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

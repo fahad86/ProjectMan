@@ -5,6 +5,10 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def gitlog
+    render json: project.with_repo
+  end
+
   def create
     render json: Project.create!(params[:project])
   end

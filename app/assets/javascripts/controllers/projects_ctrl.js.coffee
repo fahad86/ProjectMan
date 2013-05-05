@@ -15,3 +15,9 @@
     $scope.projectSettings =
       project: project
     $("#project-settings").modal("show")
+
+  $scope.openLog = (project)->
+    project.$gitLog ->
+      $scope.projectLog =
+        project: project
+      $("#project-log").modal("show")
