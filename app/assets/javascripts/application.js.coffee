@@ -14,8 +14,15 @@
     id: "@id"
   },
   {
+    build: { method:'POST', params: { action: "build" } }
     update: { method:'PUT' }
     delete: { method:'DELETE' }
     gitLog: { method:'GET', params: { action: "gitlog" } }
+  }
+]
+@app.factory "Build", ["$resource", ($resource)->
+  $resource "/projects/:project_id/builds",
+  {
+    project_id: "@project_id"
   }
 ]
