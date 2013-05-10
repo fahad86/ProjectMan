@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :name, :git_path
+  attr_accessible :name, :git_path, :build_script
   validates_presence_of :name
 
   def with_repo
