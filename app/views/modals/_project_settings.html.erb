@@ -19,6 +19,13 @@
           <%= text_field_tag :git_path, nil, placeholder: "path or url", "ng-model" => "projectSettings.project.git_path" %>
         </div>
       </div>
+
+      <div class="control-group">
+        <%= label_tag :build_script, "Git Repository", class: "control-label" %>
+        <div class="controls">
+          <%= text_field_tag :build_script, nil, "ng-model" => "projectSettings.project.git_path" %>
+        </div>
+      </div>
     </div>
 
     <div class="modal-footer">
